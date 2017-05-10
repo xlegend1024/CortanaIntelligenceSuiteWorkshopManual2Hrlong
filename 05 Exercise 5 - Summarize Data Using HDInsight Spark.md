@@ -119,4 +119,4 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
 
 1. You can also click on the other buttons like **Pie** , **Scatter** , **Line** , **Area** , and **Bar** to view these visualizations.
 
-Next Exercise: [Exercise 6 - Visualizing in Power BI Desktop](06 Exercise 6 - Visualizing in Power BI Desktop.md)
+Next Exercise: [Exercise 6 - Visualizing in Power BI Desktop](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/06%20Exercise%206%20-%20Visualizing%20in%20Power%20BI%20Desktop.md)
