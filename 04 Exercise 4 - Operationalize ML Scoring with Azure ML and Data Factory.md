@@ -178,4 +178,4 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 1. You should start to see **Ready** status activity listed on the bottom of the new window.
 2. Close the **Monitor &amp; Manage** browser tab.
 
-Next Exercise: [Exercise 5 - Summarize Data Using HDInsight Spark](05 Exercise 5 - Summarize Data Using HDInsight Spark.md)
+Next Exercise: [Exercise 5 - Summarize Data Using HDInsight Spark](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/05%20Exercise%205%20-%20Summarize%20Data%20Using%20HDInsight%20Spark.md)
