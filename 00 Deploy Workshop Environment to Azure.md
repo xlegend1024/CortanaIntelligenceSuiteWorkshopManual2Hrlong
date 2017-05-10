@@ -29,7 +29,7 @@ All you need to do is click the "Deploy to Azure" button below and fill out the 
 
 When you click the "Deploy to Azure" button, you will be taken to the Azure portal and presented with a form for a new custom deployment (which uses the ARM template in this GitHub repo). You will be presented with a blade to provide some custom parameters as shown in the screenshot below.
 
-![alt text](images/prereqparms.PNG "Azure Deployment GUI")
+![alt text](https://github.com/toddkitta/CortanaIntelligenceWorkshopPrereqDeployment/blob/master/images/prereqparms.PNG "Azure Deployment GUI")
 
 * **Subscription** - Select the subscription you wish to use for the workshop.
 * **Resource Group** - Create a new resource group and give it a globally unique name.
