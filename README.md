@@ -34,7 +34,7 @@ The workshop uses several, but not nearly all, of the components that are part o
 
 # Exercises
 
-- [https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/01%20Exercise%201%20-%20Building%20a%20Machine%20Learning%20Model.md](01 Exercise 1 - Building a Machine Learning Model.md)
+- [01 Exercise 1 - Building a Machine Learning Model.md] (01 Exercise 1 - Building a Machine Learning Model.md)
 - [Exercise 2 - Setup Azure Data Factory](02 Exercise 2 - Setup Azure Data Factory.md)
 - [Exercise 3 - Develop Data Factory Pipeline for Data Movement](03 Exercise 3 - Develop Data Factory Pipeline for Data Movement.md)
 - [Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory](04 Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory.md)
