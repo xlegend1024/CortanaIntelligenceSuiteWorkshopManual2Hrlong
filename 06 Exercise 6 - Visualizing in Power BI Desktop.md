@@ -128,4 +128,4 @@ This exercise has 4 tasks:
 
 1. You can save this Power BI report by click on Save icon from the top left corner of the screen.
 
-Next Exercise: [Exercise 7 - Deploy Intelligent Web App](07 Exercise 7 - Deploy Intelligent Web App.md)
+Next Exercise:[Exercise 7.1 - Acquire Weather API Key](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/07%20Exercise%207.1%20-Acquire%20Weather%20API%20Key.md)
