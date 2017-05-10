@@ -1,3 +1,5 @@
+# Exercise 7.1: Acquire Weather API Key.md
+
 ## Acquire Weather Underground API Key
 
 1. To retrieve the 10-day hourly weather forecast, you will use an API from WeatherUnderground.com. There is a free developer version that provides you access to the API you will need for this workshop.
