@@ -81,4 +81,4 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/create_copy_pipeline_using_the_copy_data_wizard_12.png)
 
-Next Exercise: [Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory](04 Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory.md)
+Next Exercise: [Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/04%20Exercise%204%20-%20Operationalize%20ML%20Scoring%20with%20Azure%20ML%20and%20Data%20Factory.md)
