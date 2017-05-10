@@ -1,4 +1,4 @@
-# Cortana Intelligence Suite End-to-end Workshop
+ # Cortana Intelligence Suite End-to-end Workshop
 ![Screenshot](images/cis_header.png)
 
 **NOTE:** If you are finding this lab via the [Microsoft Virtual Academy recording](https://mva.microsoft.com/en-us/training-courses/cortana-intelligence-suite-end-to-end-16972): WELCOME!!! We want to let you know that the workshop continues to evolve and you will likely find some differences between what you see in the recording and what you will find in this up-to-date and living manual. For example, after the recording, the first exercise (building an Azure ML model) was changed quite a bit to move more of the steps to R script. The essence of the workshop, however, is still intact and you should be able to follow along.
@@ -34,7 +34,7 @@ The workshop uses several, but not nearly all, of the components that are part o
 
 # Exercises
 
-- [01 Exercise 1 - Building a Machine Learning Model.md] (01 Exercise 1 - Building a Machine Learning Model.md)
+- [01 Exercise 1 - Building a Machine Learning Model](01 Exercise 1 - Building a Machine Learning Model.md)
 - [Exercise 2 - Setup Azure Data Factory](02 Exercise 2 - Setup Azure Data Factory.md)
 - [Exercise 3 - Develop Data Factory Pipeline for Data Movement](03 Exercise 3 - Develop Data Factory Pipeline for Data Movement.md)
 - [Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory](04 Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory.md)
