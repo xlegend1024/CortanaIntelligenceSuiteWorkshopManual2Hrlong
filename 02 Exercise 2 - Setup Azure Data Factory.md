@@ -120,4 +120,4 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/ex02_create_new_azure_data_factory_service_10.png)
 
-Next Exercise: [Exercise 3 - Develop Data Factory Pipeline for Data Movement](03 Exercise 3 - Develop Data Factory Pipeline for Data Movement.md)
+Next Exercise: [Exercise 3 - Develop Data Factory Pipeline for Data Movement](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/03%20Exercise%203%20-%20Develop%20Data%20Factory%20Pipeline%20for%20Data%20Movement.md)
