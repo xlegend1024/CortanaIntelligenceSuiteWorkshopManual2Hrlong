@@ -37,3 +37,5 @@ When you click the "Deploy to Azure" button, you will be taken to the Azure port
 * **App Name** - This should be a short (10 or fewer characters), but unique string that will be a prefix to all of the resources deployed. For example, if you type in *smithcis*, your Spark cluster will be called *smithcisspark* and your Lab VM will be called *smithcislab*.
     * **NOTE: Do not include any extraneous characters aside from letters (e.g. dashes, underscores, etc.).**
 * **Deployment Location** - The default deployment location for the resources needed for the workshop. This does *not* have to be the same as the location chosen for the Resource Group.
+
+- [Exercise 1 - Building a Machine Learning Model](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/01%20Exercise%201%20-%20Building%20a%20Machine%20Learning%20Model.md)
