@@ -29,7 +29,7 @@ The workshop uses several, but not nearly all, of the components that are part o
 - Microsoft Azure Subscription should be pay-as-you-go, MSDN, or EA.
    - If you are using your company's Azure subscription and your company requries that you be connected to your corporate network (through a VPN or otherwise), we recommend that you use a Trial or MSDN subscription for this workshop. This is due to the fact that you will be connecting to your subscription inside of a VM that is not connected to your corporate network.
    - Recommendation is to have each user have their own Azure subscription. This will allow every attendee to have their own sandbox.
-- Setup is required before performing the steps in these exercises. Please see [http://aka.ms/cortanasetup](http://aka.ms/cortanasetup) before going any further.
+- Setup is required before performing the steps in these exercises. Please see [http://bit.ly/2pAsC4n](http://bit.ly/2pAsC4n) before going any further.
 - Please keep in mind that HDInsight cluster and VM you provision as setup for this workshop will incur charges, so provision these resources closest to the workshop date as possible.  Preferably the afternoon/night before the workshop.
 
 # Exercises
