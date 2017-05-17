@@ -26,12 +26,13 @@
    "linkedServiceName": "OutputLinkedService-AzureBlobStorage",
    "typeProperties": 
     {
-     "fileName": "FlightsAndWeather.csv",
-     "folderPath": "sparkcontainer/flights",
-     "format": 
-     {
-       "type": "TextFormat"}
-     },
+      "fileName": "FlightsAndWeather.csv",
+      "folderPath": "sparkcontainer/flights",
+      "format": 
+      {
+       "type": "TextFormat"
+      }
+   },
      "availability": 
      {
        "frequency": "Minute",
