@@ -72,7 +72,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/ex02_create_new_azure_data_factory_service_0.png)
 
-1. Select **Intelligence + analytics** , click on **Data Factory**.
+1. Select **Data + Analytics** , click on **Data Factory**.
 
     ![Screenshot](images/ex02_create_new_azure_data_factory_service_1.png)
 
