@@ -10,7 +10,7 @@ Duration: 10 mins
 1. Launch a new browser session and navigate to [https://portal.azure.com](https://portal.azure.com). Once prompted, log in with your Microsoft Azure credentials. If prompted, choose whether your account is an organization account or a Microsoft Account.  This will be based on which account was used to provision your Azure subscription that are using for these labs.
    - **Note** : You may need to launch an InPrivate/Incognito session in your browser if you have multiple Microsoft Accounts.
 
-## Task 2: Create Web App
+## Task 2: Create Sample Web App
 
 ![Screenshot](../images/precheck-webapp.png)
 
@@ -30,3 +30,6 @@ Duration: 10 mins
 
 
 If there is an issue or failed to create resources, please copy or take the screenshot of the error and forward it to me.
+
+## Task 3: Delete test resource group
+
