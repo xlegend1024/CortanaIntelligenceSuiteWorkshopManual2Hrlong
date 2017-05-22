@@ -1,5 +1,5 @@
 # Exercise 1
--- Ex1. Task3. 14.--------------------
+#-- Ex1. Task3. 14.--------------------
 ds.flights <- maml.mapInputPort(1)
 
 # Remove rows with missing values in DepDel15
@@ -12,10 +12,13 @@ ds.flights$CRSDepHour <- floor(ds.flights$CRSDepTime / 100)
 ds.flights = ds.flights[, c("OriginAirportCode", "Month", "DayofMonth", "CRSDepHour", "DayOfWeek", "Carrier", "DestAirportCode", "DepDel15")]
 
 maml.mapOutputPort("ds.flights");
+#----------------------------------------
 
-----------------------------------------
 
--- Ex1. Task4. 10.--------------------
+
+
+
+#-- Ex1. Task4. 10.--------------------
 ds.weather <- maml.mapInputPort(1)
 
 # substitute missing values in HourlyPrecip & WindSpeed
@@ -50,9 +53,13 @@ ds.weather = ds.weather[, c("AirportCode", "Month", "Day", "Hour", "WindSpeed", 
 ds.weather$AirportCode <- as.factor(ds.weather$AirportCode)
 
 maml.mapOutputPort("ds.weather");
-----------------------------------------
+#----------------------------------------
 
--- Ex1. Task5. 7.--------------------
+
+
+
+
+#-- Ex1. Task5. 7.--------------------
 ds.flights <- maml.mapInputPort(1)
 
 # cast some of the data types to factor (categorical)
@@ -62,9 +69,13 @@ ds.flights$DestAirportCode <- as.factor(ds.flights$DestAirportCode)
 ds.flights$OriginAirportCode <- as.factor(ds.flights$OriginAirportCode)
 
 maml.mapOutputPort("ds.flights");
-----------------------------------------
+#----------------------------------------
 
--- Ex1. Task7. 17.--------------------
+
+
+
+
+#-- Ex1. Task7. 17.--------------------
 ds.theresults <- maml.mapInputPort(1)
 
 # remove a couple columns
@@ -76,4 +87,4 @@ colnames(ds.theresults)[colnames(ds.theresults) == 'LATITUDE'] <- 'OriginLatitud
 colnames(ds.theresults)[colnames(ds.theresults) == 'LONGITUDE'] <- 'OriginLongitude'
 
 maml.mapOutputPort("ds.theresults");
-----------------------------------------
+#----------------------------------------
