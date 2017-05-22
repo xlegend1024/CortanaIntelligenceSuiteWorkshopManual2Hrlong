@@ -1,6 +1,6 @@
 # Exercise 5
 -- Ex5. Task1. 5.--------------------
- import sqlContext.implicits._
+import sqlContext.implicits._
 
 val flightDelayTextLines = sc.textFile("wasb:///Scored_FlightsAndWeather.csv")
 
@@ -24,10 +24,18 @@ val resultDataFrame = flightDelayRowsWithoutHeader.map(
 resultDataFrame.write.mode("overwrite").saveAsTable("FlightDelays")
 ----------------------------------------
 
+
+
+
+
 -- Ex5. Task1. 7.--------------------
 %%sql
 SELECT * FROM FlightDelays
 ----------------------------------------
+
+
+
+
 
 -- Ex5. Task1. 11.--------------------
 %%sql
@@ -38,11 +46,19 @@ GROUP BY OriginAirportCode, OriginLatLong, Month, Day, Hour
 Having Sum(DelayPredicted) > 1
 ----------------------------------------
 
+
+
+
+
 -- Ex5. Task1. 15.--------------------
 val summary = sqlContext.sql("SELECT  OriginAirportCode, OriginLatLong, Month, Day, Hour, Sum(DelayPredicted) NumDelays, Avg(DelayProbability) AvgDelayProbability FROM FlightDelays WHERE Month = 4 GROUP BY OriginAirportCode, OriginLatLong, Month, Day, Hour Having Sum(DelayPredicted) > 1")
 
 summary.write.mode("overwrite").saveAsTable("FlightDelaysSummary")
 ----------------------------------------
+
+
+
+
 
 -- Ex5. Task1. 17.--------------------
 %%sql
