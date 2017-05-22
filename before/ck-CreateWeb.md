@@ -12,10 +12,6 @@ Duration: 10 mins
 
 ## Task 2: Create Web App
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
-
-This GitHub repo exists to deploy the web application that is part of the *Cortana Intelligence Suite Workshop*. We are leveraging a capability of Azure called ARM templates which allow you to specifiy what your solution looks like from a deployment perspetive simply by using JSON code. This is a fairly simple use of ARM templates, but you can actually deploy very complex topologies using this technology - straight from source control. Pretty cool!!
-
 ![Screenshot](../images/precheck-webapp.png)
 
 1) Select 'Create New' for Resource Group. Resource Group Name will be automatically created.
@@ -28,6 +24,10 @@ This GitHub repo exists to deploy the web application that is part of the *Corta
 
 3) Click 'Next' and 'Deploy' at the following steps. 
 
-If there is an issue or failed to create resources, please contact me.
+* Click follwing link to create a web app
 
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
+This GitHub repo exists to deploy the web application that is part of the *Cortana Intelligence Suite Workshop*. We are leveraging a capability of Azure called ARM templates which allow you to specifiy what your solution looks like from a deployment perspetive simply by using JSON code. This is a fairly simple use of ARM templates, but you can actually deploy very complex topologies using this technology - straight from source control. Pretty cool!!
+
+If there is an issue or failed to create resources, please copy or take the screenshot of the error and forward it to me.
