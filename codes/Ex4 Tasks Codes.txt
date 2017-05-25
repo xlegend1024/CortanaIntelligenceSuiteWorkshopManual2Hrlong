@@ -12,7 +12,8 @@
     }
 }
 ----------------------------------------
-
+Sample mlEndpoint: https://ussouthcentral.services.azureml.net/subscriptions/d609b87a96554a94ba5a00703a1679e6/services/77251d24f8364614b5cf5a5f303702bf/jobs
+Sample apiKey: 3Lt80rGifuIyJ5DVv6LjKXIDMEGcXcK8jh8xBLU1md4X0Wkyhxm/9Qpu/ChheoVB0KLI1lnLFqKFHmGzgpy0pA==
 
 
 
