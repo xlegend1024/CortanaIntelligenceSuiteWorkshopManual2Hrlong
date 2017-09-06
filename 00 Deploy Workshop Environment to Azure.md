@@ -3,7 +3,6 @@
 This GitHub repo exists to get you ready for the Cortana Intelligence End-to-End Workshop. There are two main steps:
 
 1. Deploy workshop environment to Azure
-2. Acquire a Weather Underground API Key
 
 ## Workshop Requirements
 
