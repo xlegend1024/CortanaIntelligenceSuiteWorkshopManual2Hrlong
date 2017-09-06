@@ -1,5 +1,7 @@
-# Exercise 1
-#-- Ex1. Task3. 14.--------------------
+# AWT Flights and Weather dataset
+# Task 4: Understand Data
+
+# Map 1-based optional input ports to variables
 ds.awtdata <- maml.mapInputPort(1)
 
 # Remove rows with missing values in DepDel15
@@ -36,4 +38,3 @@ ds.awtdata$DestAirportCode <- as.factor(ds.awtdata$DestAirportCode)
 ds.awtdata$OriginAirportCode <- as.factor(ds.awtdata$OriginAirportCode)
 
 maml.mapOutputPort("ds.awtdata");
-#----------------------------------------
