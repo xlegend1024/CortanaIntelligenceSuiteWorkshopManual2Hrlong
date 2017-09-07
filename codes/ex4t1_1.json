@@ -6,7 +6,7 @@
         "typeProperties": {
             "mlEndpoint": "<Specify the batch scoring URL>",
             "apiKey": "<Specify the published workspace model's API key>",
-            "tenant":"<default>"
+            "tenant":"<use default of yours>"
         }
     }
 }
