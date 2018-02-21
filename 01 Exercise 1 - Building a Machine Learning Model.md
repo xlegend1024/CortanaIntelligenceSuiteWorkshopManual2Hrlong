@@ -48,23 +48,11 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 ## Task 3: Upload the Sample Datasets
 
 1. Before you begin creating a machine learning experiment, there are three datasets you need to load.
-2. Download the three CSV sample datasets from here: http://aka.ms/awtdata and save AdventureWorksTravelDatasets.zip to your Desktop.
-   - **Note:** You will need to unblock the zip file before extracting its files. Do this by right clicking on it, selecting **Properties**, and then unblocking the file in the resulting dialog.
-3. Extract the ZIP and verify you have the following files:
-   - FlightDelaysWithAirportCodes.csv
-   - FlightWeatherWithAirportCode.csv
-   - AirportCodeLocationClean.csv
-4. Click **+ NEW** at the bottom, point to **Dataset** , and select **From Local File**.
-
-    ![Screenshot](images/upload_the_sample_datasets_0.png)
-
-5. In the dialog that appears, click **Choose File** and browse to the **FlightDelaysWithAirportCodes.csv** file and click **OK**.
-6. Change the name of the dataset to **FlightDelaysWithAirportCodes**.
-7. Click on the check mark on the bottom right corner of the screen.
+2. From the Machine Learning Studio, click + NEW at the bottom, point to Dataset, and select From Local File.
+3. In the dialog that appears, click Choose File and browse to the "**C:\data\1.MachineLearning\1awt_flightsandweather.csv**" file and click OK.
+4. Click on the check mark on the bottom right corner of the screen.
 
     ![Screenshot](images/upload_the_sample_datasets_1.png)
-
-8. Repeat the previous step for the **FlightWeatherWithAirportCode.csv** and **AirportCodeLocationLookupClean.csv** setting the name for the dataset in a similar fashion.
 
 ## Task 4: Start a New Experiment
 
@@ -77,11 +65,11 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/start_a_new_experiment_1.png)
 
-4. In the toolbar on the left, in the Search experiment items box, type the name of the dataset you created with flight delay data (FlightDelaysWithAirportCodes). You should see a component for it listed under **Saved Datasets** -> **My Datasets**.
+4. In the toolbar on the left, in the Search experiment items box, type the name of the dataset you created with flight delay data (awt_flightsandweather). You should see a component for it listed under **Saved Datasets** -> **My Datasets**.
 
     ![Screenshot](images/start_a_new_experiment_2.png)
 
-5. Click and drag on the **FlightDelaysWithAirportCodes** to add it to the design surface.
+5. Click and drag on the **1awt_flightsandweather.csv** to add it to the design surface.
 
     ![Screenshot](images/start_a_new_experiment_3.png)
 
@@ -107,49 +95,6 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
     1. Create a new column that represents the departure hour. This will be based on the **CRSDepTime** column.
     1. Trim down the list of columns needed to do the analysis at hand.
 
-12. In order to perform the aforementioned data manipulation tasks, you could use built-in Azure ML modules for each task or you could use a script (such as R or Python). Here, you will use R. To do this, add an **Execute R Script** (recall you can search for modules on the left) module beneath the flights dataset and connect the output of the dataset to the first input port (leftmost) of the **Execute R Script**.
-
-    ![Screenshot](images/ex01_connect_flightdelayswithairportcodes_to_r_module.png)
-
-37. In the **Properties** panel for **Execute R Script**, click the "double window" icon to maximize the script editor.
-
-    ![Screenshot](images/start_a_new_experiment_27.png)
-
-38. Replace the default script with the following and click the checkmark to save it.
-
-    ``` R
-    ds.flights <- maml.mapInputPort(1)
-
-    # Remove rows with missing values in DepDel15
-    ds.flights <- ds.flights[!is.na(ds.flights$DepDel15), ]
-
-    # Create a column for departure hour called CRSDepHour
-    ds.flights$CRSDepHour <- floor(ds.flights$CRSDepTime / 100)
-
-    # Trim the columns to only those we will use for the predictive model
-    ds.flights = ds.flights[, c("OriginAirportCode", "Month", "DayofMonth", "CRSDepHour", "DayOfWeek", "Carrier", "DestAirportCode", "DepDel15")]
-
-    maml.mapOutputPort("ds.flights");
-    ```
-
-39. Run the experiment to update the metadata and process the data (this may take a minute or two to complete).
-40. Right click on the leftmost output port of your **Execute R Script** module and select **Visualize**.
-41. Compare the data in this view with the data before it was processed by the R script (recall the list of manipulations above). Verify that the dataset only contains the 8 columns referenced in the R script.
-
-    ![Screenshot](images/ex01_data_viz_after_flightdelayswithairportcodes_r_module.png)
-
-42. At this point the Flight Delay Data is prepared, and we turn to preparing the historical weather data.
-
-## Task 5: Prepare the Weather Data
-
-1. To the right of the **FlightDelaysWithAirportCodes** dataset, add the **FlightWeatherWithAirportCode** dataset.
-
-    ![Screenshot](images/prepare_the_weather_data_0.png)
-
-2. Right click the output port of the **FlightWeatherWithAirportCode** dataset and select **Visualize**.
-
-    ![Screenshot](images/prepare_the_weather_data_1.png)
-
 3. Observe that this data set has 406,516 rows and 29 columns. For this model, we are going to focus on predicting delays using WindSpeed (in MPH), SeaLevelPressure (in inches of Hg), and HourlyPrecip (in inches). We will focus on preparing the data for those features.
 4. In the dialog, click the **WindSpeed** column and review the statistics. Observe that the Feature Type was inferred as String and that there are 32 Missing Values. Below that, examine the histogram to see that, even though the type was inferred as string, the values are all actually numbers (e.g. the x-axis values are 0, 6, 5, 7, 3, 8, 9, 10, 11, 13). We will need to ensure that we remove any missing values and convert WindSpeed to its proper type as a numeric feature.
 
@@ -173,9 +118,9 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
     1. Change the data type of **AirportCode** to categorical.
     1. Reduce the number of columns in the dataset.
 
-12. Add an **Execute R Script** module beneath the weather dataset and connect the output of the dataset to the first input port (leftmost) of the **Execute R Script**.
+12. In order to perform the aforementioned data manipulation tasks, you could use built-in Azure ML modules for each task or you could use a script (such as R or Python). Here, you will use R. To do this, add an **Execute R Script** (recall you can search for modules on the left) module beneath the flights dataset and connect the output of the dataset to the first input port (leftmost) of the **Execute R Script**.
 
-    ![Screenshot](images/ex01_connect_weather_to_r_module.png)
+    ![Screenshot](images/ex01_connect_flightdelayswithairportcodes_to_r_module.png)
 
 37. In the **Properties** panel for **Execute R Script**, click the "double window" icon to maximize the script editor.
 
@@ -184,84 +129,54 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 38. Replace the default script with the following and click the checkmark to save it.
 
     ``` R
-    ds.weather <- maml.mapInputPort(1)
+    # AWT Flights and Weather dataset
+    # Task 4: Understand Data
+
+    # Map 1-based optional input ports to variables
+    ds.awtdata <- maml.mapInputPort(1)
+
+    # Remove rows with missing values in DepDel15
+    ds.awtdata <- ds.awtdata[!is.na(ds.awtdata$DepDel15), ]
 
     # substitute missing values in HourlyPrecip & WindSpeed
-    ds.weather$HourlyPrecip[is.na(ds.weather$HourlyPrecip)] <- 0.0
-    ds.weather$WindSpeed[is.na(ds.weather$WindSpeed)] <- 0.0
-
-    # Round weather time up to the next hour since
-    # that's the hour for which we want to use flight data
-    ds.weather$Hour = ceiling(ds.weather$Time / 100)
+    ds.awtdata$HourlyPrecip[is.na(ds.awtdata$HourlyPrecip)] <- 0.0
+    ds.awtdata$WindSpeed[is.na(ds.awtdata$WindSpeed)] <- 0.0
 
     # Replace any WindSpeed values of "M" with 0.005 and make the feature numeric
-    speed.num = ds.weather$WindSpeed
+    speed.num = ds.awtdata$WindSpeed
     speed.num[speed.num == "M"] = 0.005
     speed.num = as.numeric(speed.num)
-    ds.weather$WindSpeed = speed.num 
+    ds.awtdata$WindSpeed = speed.num 
 
     # Replace any SeaLevelPressure values of "M" with 29.92 (the average pressure) and make the feature numeric
-    pressure.num = ds.weather$SeaLevelPressure
+    pressure.num = ds.awtdata$SeaLevelPressure
     pressure.num[pressure.num == "M"] = 29.92
     pressure.num = as.numeric(pressure.num)
-    ds.weather$SeaLevelPressure = pressure.num 
+    ds.awtdata$SeaLevelPressure = pressure.num 
 
     # Adjust the HourlyPrecip variable (convert "T" (trace) to 0.005)
-    rain = ds.weather$HourlyPrecip
+    rain = ds.awtdata$HourlyPrecip
     rain[rain %in% c("T")] = "0.005"
-    ds.weather$HourlyPrecip = as.numeric(rain)
-
-    # Pare down the variables in the Weather dataset
-    ds.weather = ds.weather[, c("AirportCode", "Month", "Day", "Hour", "WindSpeed", "SeaLevelPressure", "HourlyPrecip")]
+    ds.awtdata$HourlyPrecip = as.numeric(rain)
 
     # cast some of the data types to factor (categorical)
-    ds.weather$AirportCode <- as.factor(ds.weather$AirportCode)
+    ds.awtdata$OriginAirportCode <- as.factor(ds.awtdata$OriginAirportCode)
 
-    maml.mapOutputPort("ds.weather");
+    # cast some of the data types to factor (categorical)
+    ds.awtdata$DayOfWeek <- as.factor(ds.awtdata$DayOfWeek)
+    ds.awtdata$Carrier <- as.factor(ds.awtdata$Carrier)
+    ds.awtdata$DestAirportCode <- as.factor(ds.awtdata$DestAirportCode)
+    ds.awtdata$OriginAirportCode <- as.factor(ds.awtdata$OriginAirportCode)
+
+    maml.mapOutputPort("ds.awtdata");
+
     ```
 
 39. Run the experiment to update the metadata and process the data (this may take a minute or two to complete).
 40. Right click on the leftmost output port of your **Execute R Script** module and select **Visualize**.
-41. Compare the data in this view with the data before it was processed by the R script (recall the list of manipulations above). Verify that the dataset only contains the 7 columns referenced in the R script. Also verify that **WindSpeed**, **SeaLevelPressure**, and **HourlyPrecip** are now all Numeric Feature types and that they have no missing values.
+41. Compare the data in this view with the data before it was processed by the R script (recall the list of manipulations above). Verify that the dataset only contains the 8 columns referenced in the R script.
 
-    ![Screenshot](images/ex01_data_viz_after_weather_r_module.png)
-
-## Task 6: Join the Flight and Weather Datasets
-
-1. With both datasets ready, we want to join them together so that we can associate historical flight delay with the weather data at departure time.
-2. Drag the **Join Data** module on to the design surface, beneath and centered between both **Execute R Script** modules. Connect the leftmost output port of the *left* **Execute R module** to leftmost input port of the **Join Data** module, and the leftmost output port of the *right* **Execute R Script** module to the rightmost input port of the **Join Data** module.
-
-    ![Screenshot](images/join_the_flight_and_weather_datasets_0.png)
-
-1. In the **Properties** panel of the **Join Data** module, relate the rows of data between the two sets L (the flight delays) and R (the weather). Set the **Join key columns for L** to include **OriginAirportCode**, **Month**, **DayofMonth**, and **CRSDepHour**.
-
-    ![Screenshot](images/join_the_flight_and_weather_datasets_1.png)
-
-1. Set the **Join key columns for R** to include **AirportCode**, **Month**, **Day**, and **Hour**.
-
-    ![Screenshot](images/join_the_flight_and_weather_datasets_2.png)
-
-1. Make sure **Join Type** is set to **Inner Join** and *uncheck* **Keep right key columns in joined table** (so that we do not include the redundant values of AirportCode, Month, Day, and Hour).
-
-    ![Screenshot](images/join_the_flight_and_weather_datasets_3.png)
-
-1. There is one more data manipulation task that needs to be done and once again we will use an R script. Add an **Execute R Script** module below **Join Data** and connect the **Join Data** output to the leftmost input of the **Execute R Script** module.
-1. Replace the default script of the **Execute R Script** module with the following and click the checkmark to save it. This script simply changes the data type of some of the columns so that they are represented as **Categorical** to Azure ML.
-
-    ``` R
-    ds.flights <- maml.mapInputPort(1)
-
-    # cast some of the data types to factor (categorical)
-    ds.flights$DayOfWeek <- as.factor(ds.flights$DayOfWeek)
-    ds.flights$Carrier <- as.factor(ds.flights$Carrier)
-    ds.flights$DestAirportCode <- as.factor(ds.flights$DestAirportCode)
-    ds.flights$OriginAirportCode <- as.factor(ds.flights$OriginAirportCode)
-
-    maml.mapOutputPort("ds.flights");
-    ```
-
-1. Run the experiment to update the metadata.
-1. Save your experiment.
+    ![Screenshot](images/ex01_data_viz_after_flightdelayswithairportcodes_r_module.png)
 
 ## Task 7: Train the Model
 
