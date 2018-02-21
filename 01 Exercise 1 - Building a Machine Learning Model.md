@@ -1,6 +1,6 @@
 # Exercise 1: Building a Machine Learning Model
 
-Duration: 90 mins
+Duration: 30 mins
 
 Synopsis: In this exercise, attendees will implement a classification experiment. They will load the training data from their local machine into a dataset. Then they will explore the data to identify the primary components they should use for prediction, and use two different algorithms for predicting the classification. They will evaluate the performance of both and algorithms choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the sample web app.
 
