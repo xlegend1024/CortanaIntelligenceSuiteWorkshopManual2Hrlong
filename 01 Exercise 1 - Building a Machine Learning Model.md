@@ -238,7 +238,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
 1. Right click on the line that connects the new **Web service input** module to the **Execute R Script** module and click **Delete**.
 
-1. Now move the **Web service input** down so it is to the right of the **Join Data** module.
+1. Now move the **Web service input** down so it is to the right of the **Execute R Script** module.
 
 1. Right click the line connecting the **Join Data** module and the **Execute R Script** module and select **Delete**. Move the **Execute R Script** module down a little to give yourself a little more room.
 
@@ -254,51 +254,43 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/operationalize_the_experiment_8.png)
 
-1. Connect the output of the **Web service input** to leftmost input of the **Execute R Script** module that is right below **Select Columns in Dataset**.
+1. Add new **Execute R Script** module on canvas. Create connection between the **Select Columns in Dataset** and **Execute R Script** modules.
 
-    ![Screenshot](images/operationalize_the_experiment_5.png)
+    ![Screenshot](images/operationalize_the_experiment_9.png)
 
-1. Because we have removed the latitude and longitude columns from the dataset (so they were not required as an input to the web service), we have to add them back in before we return the result so that the results can be easily visualized on a map.
-
-2. To add these fields back, begin by deleting the line between the **Score Model** and **Web service output**.
-3. Drag the **AirportCodeLocationLookupClean** dataset on to the design surface, positioning it below the Score Model module.
-
-    ![Screenshot](images/operationalize_the_experiment_10.png)
-
-1. Add a **Join Data** module. Connect the output of the **Score Model** module to the leftmost input of the **Join Data** module and the output of the dataset to the rightmost input of the **Join Data** module.
-
-    ![Screenshot](images/operationalize_the_experiment_11.png)
-
-1. In the **Properties** panel for the **Join Data** module, for the **Join key columns for L** propery, set the selected columns to **OriginAirportCode**. For the **Join key columns for R** property, set the selected columns to **AIRPORT**. Uncheck Keep right key columns in joined table.
-
-    ![Screenshot](images/operationalize_the_experiment_12.png)
-
-1. Add an **Execute R Script** module beneath the **Join Data** module. Connect the **Join Data** output to the leftmost input of the **Execute R Script** module.
-
-    ![Screenshot](images/operationalize_the_experiment_13.png)
-
-1. Replace the default script in the **Execute R Script** module with the following and click the checkmark to save it. This script removes columns we don't need and renames others.
+1. In the **Properties** panel for **Execute R Script**, click the "double window" icon to maximize the script editor. Replace the default script with the following and click the checkmark to save it.
 
     ``` R
-    ds.theresults <- maml.mapInputPort(1)
+    # AWT Flights and Weather dataset
 
-    # remove a couple columns
-    ds.theresults$AIRPORT_ID <- NULL
-    ds.theresults$DISPLAY_AIRPORT_NAME <- NULL
+    # Map 1-based optional input ports to variables
+    ds.awtdata <- maml.mapInputPort(1)
 
-    # rename a couple columns
-    colnames(ds.theresults)[colnames(ds.theresults) == 'LATITUDE'] <- 'OriginLatitude'
-    colnames(ds.theresults)[colnames(ds.theresults) == 'LONGITUDE'] <- 'OriginLongitude'
+    # cast some of the data types to factor (categorical)
+    ds.awtdata$OriginAirportCode <- as.factor(ds.awtdata$OriginAirportCode)
 
-    maml.mapOutputPort("ds.theresults");
+    # cast some of the data types to factor (categorical)
+    ds.awtdata$DayOfWeek <- as.factor(ds.awtdata$DayOfWeek)
+    ds.awtdata$Carrier <- as.factor(ds.awtdata$Carrier)
+    ds.awtdata$DestAirportCode <- as.factor(ds.awtdata$DestAirportCode)
+    ds.awtdata$OriginAirportCode <- as.factor(ds.awtdata$OriginAirportCode)
+
+    maml.mapOutputPort("ds.awtdata");
     ```
 
+3. Create connection between **Execute R Script** and **Score Model** modules.
+
+    ![Screenshot](images/operationalize_the_experiment_10.png)
 
 1. Connect the leftmost output of the **Execute R Script** module to the input of the **Web service output** module.
 
     ![Screenshot](images/operationalize_the_experiment_18.png)
 
-1. Run the experiment. This may take a few minutes. Your experiment is now ready to be deployed as a web service!
+1. **Run** the experiment. This may take a few minutes. Your experiment is now ready to be deployed as a web service!
+
+1. Finally, once your experiment is done, you will see flows like following.
+
+    ![Screenshot](images/operationalize_the_experiment_18.png)
 
 ## Task 9: Deploy Web Service and Note API Information
 
