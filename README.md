@@ -17,8 +17,6 @@ The workshop uses several, but not nearly all, of the components that are part o
 - Azure ML
 - Azure Data Factory
 - Azure Storage
-- HDInsight Spark
-- Power BI
 - Azure App Service
 
 
