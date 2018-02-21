@@ -236,15 +236,13 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
 1. A copy of your training experiment is created that contains the trained model wrapped between **Web service input** (the web service action you invoke with parameters) and **Web service output** modules (how the result of scoring the parameters are returned). To fully control the required inputs of the web service and return values, there are some adjustments that need to be made to the newly created predictive experiment (notice the new tab at the top of the experiement).
 
-1. Right click on the line that connects the new **Web service input** module to the **Execute R Script** module and click **Delete**.
-
-1. Now move the **Web service input** down so it is to the right of the **Execute R Script** module.
-
-1. Right click the line connecting the **Join Data** module and the **Execute R Script** module and select **Delete**. Move the **Execute R Script** module down a little to give yourself a little more room.
+1. Move the **Web service input** down so it is to the right of the **Execute R Script** module.
 
     ![Screenshot](images/operationalize_the_experiment_6.png)
 
-1. Between the **Join Data** and **Execute R Script** modules, drop a **Select Columns in Dataset** module and connect **Join Data** to this new **Select Columns in Dataset** module.
+1. Remove connect lin between the **Execute R Script** and **Score Model** modules.
+
+1. Add new **Select Columns in Dataset** on convas.
 
 1. In the **Properties** panel for the **Select Columns in Dataset** module click the **Launch column selector** button. In this dialog, click **ALL COLUMNS** and select **Exclude** (notice this is an exclude operation) from the dropdown box. Then select **DepDel15** in the textbox. This configuration will update the web service metadata so that this column does not appear as a required input parameter for the web service.
 
@@ -282,15 +280,11 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/operationalize_the_experiment_10.png)
 
-1. Connect the leftmost output of the **Execute R Script** module to the input of the **Web service output** module.
+1. Drag and drop from port of **Web Service input** to bottom of **Execute R Script** module like following.
 
     ![Screenshot](images/operationalize_the_experiment_18.png)
 
 1. **Run** the experiment. This may take a few minutes. Your experiment is now ready to be deployed as a web service!
-
-1. Finally, once your experiment is done, you will see flows like following.
-
-    ![Screenshot](images/operationalize_the_experiment_18.png)
 
 ## Task 9: Deploy Web Service and Note API Information
 
