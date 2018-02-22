@@ -10,9 +10,9 @@ This exercise has 9 tasks:
 * [Task 2: Navigate to Machine Learning Studio](#task-2-navigate-to-machine-learning-studio)
 * [Task 3: Upload the Sample Datasets](#task-3-upload-the-sample-datasets)
 * [Task 4: Start a New Experiment](#task-4-start-a-new-experiment)
-* [Task 5: Train the Model](#task-5-Train-the-Model)
-* [Task 6: Operationalize the Experiment](##task-5-train-the-model)
-* [Task 7: Deploy Web Service and Note API Information](#task-9-deploy-web-service-and-note-api-information)
+* [Task 5: Train the Model](#task-5-train-the-model)
+* [Task 6: Operationalize the Experiment](#task-6-operationalize-the-experiment)
+* [Task 7: Deploy Web Service and Note API Information](#task-7-deploy-web-service-and-note-api-information)
 
 ## Get out of Jail Free
 
@@ -313,7 +313,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 2. Copy each of these values into Notepad as well. Make sure you note which GUID is which because you will need these in a later step.
 
 1. Finally, copy the **Batch Requests** URL to Notepad as well, but make sure to remove the '?' character and everything after it. You should be left with a URL that looks something like the following. Again, make sure to label this as your batch service in your Notepad instance.
-    * https://ussouthcentral.services.azureml.net/subscriptions/[**SOME_GUID**]/services/[**SOME_OTHER_GUID**]/jobs
+    * https://ussouthcentral.services.azureml.net/subscriptions/[SOME_GUID]/services/[SOME_OTHER_GUID]/jobs
 
     ![Screenshot](images/operationalize_the_experiment_21.png)
 

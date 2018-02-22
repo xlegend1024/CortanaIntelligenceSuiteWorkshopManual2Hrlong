@@ -101,8 +101,10 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
         }
     }
     ```
+
 1. Make sure to change the start to today's date and end to today + 1 date.
-2. Click **Deploy**.
+
+2. Click **Deploy**. It may take less than a minute to provision the pipeline resource.
 
 ## Task 3: Monitor Your Pipeline Activities
 
@@ -113,5 +115,8 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
     ![Screenshot](images/monitor_your_pipeline_activities_0.png)
 1. You should start to see **Ready** status activity listed on the bottom of the new window.
 2. Close the **Monitor &amp; Manage** browser tab.
+3. As an option, you can find the scored file from your blob storage.
+
+    ![Screenshot](images/ex02_scored_result.png)
 
 Next Exercise: [Exercise 3 - Deploy Intelligent Web App](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual2Hrlong/blob/master/03%20Exercise%203%20-%20Deploy%20Intelligent%20Web%20App.md)
