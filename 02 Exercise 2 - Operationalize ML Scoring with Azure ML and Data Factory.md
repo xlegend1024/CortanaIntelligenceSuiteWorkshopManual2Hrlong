@@ -7,8 +7,8 @@ Synopsis: In this exercise, attendees will extend the Data Factory service to op
 This exercise has 5 tasks:
 
 * [Task 1: Create Azure ML Linked Service](#task-1-create-azure-ml-linked-service)
-* [Task 2: Create Azure ML Predictive Pipeline](#task-4-create-azure-ml-predictive-pipeline)
-* [Task 3: Monitor Your Pipeline Activities](#task-5-monitor-your-pipeline-activities)
+* [Task 2: Create Azure ML Predictive Pipeline](#task-2-create-azure-ml-predictive-pipeline)
+* [Task 3: Monitor Your Pipeline Activities](#task-3-monitor-your-pipeline-activities)
 
 ## Get out of Jail Free
 
@@ -28,7 +28,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
     ![Screenshot](images/create_azure_ml_linked_service_2.png)
 1. Select **Azure ML** from the list.
 2. In the new window, be sure change the JSON file to match the following:
-    * Back in [Exercise 1, Task 9](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual2Hrlong/blob/master/01%20Exercise%201%20-%20Building%20a%20Machine%20Learning%20Model.md#task-7-deploy-web-service-and-note-api-information) you noted some values related to your ML web service. The value for **mlEndPoint**  below is your web service's **Batch Requests** URL (remembering to remove the query string), and **apiKey** is the **Primary Key** of your web service.
+    * Back in [Exercise 1, Task 7](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual2Hrlong/blob/master/01%20Exercise%201%20-%20Building%20a%20Machine%20Learning%20Model.md#task-7-deploy-web-service-and-note-api-information) or [Microsoft Azure Machine Learning Web Services](https://services.azureml.net) poratl you noted some values related to your ML web service. The value for **mlEndPoint**  below is your web service's **Batch Requests** URL (remembering to remove the query string), and **apiKey** is the **Primary Key** of your web service.
 
     ```json
     {
@@ -104,7 +104,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 1. Make sure to change the start to today's date and end to today + 1 date.
 2. Click **Deploy**.
 
-## Task 5: Monitor Your Pipeline Activities
+## Task 3: Monitor Your Pipeline Activities
 
 1. Close the current blade by clicking on the **X** from the top right corner of the blade.
 2. Click on the **Monitor &amp; Manage** from the **Actions** section.
