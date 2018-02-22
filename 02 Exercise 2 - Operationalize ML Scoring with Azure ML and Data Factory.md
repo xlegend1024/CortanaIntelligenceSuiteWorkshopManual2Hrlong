@@ -1,4 +1,4 @@
-# Exercise 3: Operationalize ML Scoring with Azure ML and Data Factory
+# Exercise 2: Operationalize ML Scoring with Azure ML and Data Factory
 
 Duration: 20 mins
 

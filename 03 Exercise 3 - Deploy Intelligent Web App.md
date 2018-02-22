@@ -1,4 +1,4 @@
-# Exercise 4: Deploy Intelligent Web App
+# Exercise 3: Deploy Intelligent Web App
 
 Duration: 20 mins
 
