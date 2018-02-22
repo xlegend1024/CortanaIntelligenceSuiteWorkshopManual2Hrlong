@@ -37,4 +37,4 @@ When you click the "Deploy to Azure" button, you will be taken to the Azure port
     * **NOTE: Do not include any extraneous characters aside from letters (e.g. dashes, underscores, etc.).**
 * **Deployment Location** - The default deployment location for the resources needed for the workshop. This does *not* have to be the same as the location chosen for the Resource Group.
 
-[Exercise 1 - Building a Machine Learning Model](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/01%20Exercise%201%20-%20Building%20a%20Machine%20Learning%20Model.md)
+[Exercise 1 - Building a Machine Learning Model](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual2Hrlong/blob/master/01%20Exercise%201%20-%20Building%20a%20Machine%20Learning%20Model.md)

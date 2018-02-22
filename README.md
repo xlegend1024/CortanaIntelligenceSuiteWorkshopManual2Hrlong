@@ -32,14 +32,9 @@ The workshop uses several, but not nearly all, of the components that are part o
 
 # Exercises
 - [Prereq   0 - Deploy Workshop Environment to Azure](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/00%20Deploy%20Workshop%20Environment%20to%20Azure.md)
-- [Exercise 1 - Building a Machine Learning Model](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/01%20Exercise%201%20-%20Building%20a%20Machine%20Learning%20Model.md)
-- [Exercise 2 - Setup Azure Data Factory](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/02%20Exercise%202%20-%20Setup%20Azure%20Data%20Factory.md)
-- [Exercise 3 - Develop Data Factory Pipeline for Data Movement](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/03%20Exercise%203%20-%20Develop%20Data%20Factory%20Pipeline%20for%20Data%20Movement.md)
-- [Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/04%20Exercise%204%20-%20Operationalize%20ML%20Scoring%20with%20Azure%20ML%20and%20Data%20Factory.md)
-- [Exercise 5 - Summarize Data Using HDInsight Spark](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/05%20Exercise%205%20-%20Summarize%20Data%20Using%20HDInsight%20Spark.md)
-- [Exercise 6 - Visualizing in Power BI Desktop](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/06%20Exercise%206%20-%20Visualizing%20in%20Power%20BI%20Desktop.md)
-- [Exercise 7.1 - Acquire Weather API Key](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/07%20Exercise%207.1%20-%20Acquire%20Weather%20API%20Key.md)
-- [Exercise 7.2 - Deploy Intelligent Web App](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/07%20Exercise%207.2%20-%20Deploy%20Intelligent%20Web%20App.md)
-- [Exercise 8 - Cleanup of Azure Resources](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/08%20Exercise%208%20-%20Cleanup%20of%20Azure%20Resources.md)
+- [Exercise 1 - Building a Machine Learning Model](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual2Hrlong/blob/master/01%20Exercise%201%20-%20Building%20a%20Machine%20Learning%20Model.md)
+- [Exercise 2 - Operationalize ML Scoring with Azure ML and Data Factory](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/04%20Exercise%204%20-%20Operationalize%20ML%20Scoring%20with%20Azure%20ML%20and%20Data%20Factory.md)
+- [Exercise 3 - Deploy Intelligent Web App](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/07%20Exercise%207.2%20-%20Deploy%20Intelligent%20Web%20App.md)
+- [Exercise 4 - Cleanup of Azure Resources](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/08%20Exercise%208%20-%20Cleanup%20of%20Azure%20Resources.md)
 - [Appendix A - Alternative to Azure ML Exercise](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/09%20Appendix%20A%20-%20Alternative%20to%20Azure%20ML%20Exercise.md)
 - [Appendix B - Alternative to Azure Data Factory Exercises](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/10%20Appendix%20B%20-%20Alternative%20to%20Data%20Factory%20Exercises.md)
