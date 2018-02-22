@@ -9,12 +9,9 @@ This exercise has 9 tasks:
 * [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm)
 * [Task 2: Navigate to Machine Learning Studio](#task-2-navigate-to-machine-learning-studio)
 * [Task 3: Upload the Sample Datasets](#task-3-upload-the-sample-datasets)
-* [Task 4: Start a New Experiment](#task-4-start-a-new-experiment)
-* [Task 5: Prepare the Weather Data](#task-5-prepare-the-weather-data)
-* [Task 6: Join the Flight and Weather Datasets](#task-6-join-the-flight-and-weather-datasets)
-* [Task 7: Train the Model](#task-7-train-the-model)
-* [Task 8: Operationalize the Experiment](#task-8-operationalize-the-experiment)
-* [Task 9: Deploy Web Service and Note API Information](#task-9-deploy-web-service-and-note-api-information)
+* [Task 4: Train the Model](#task-7-train-the-model)
+* [Task 5: Operationalize the Experiment](#task-8-operationalize-the-experiment)
+* [Task 6: Deploy Web Service and Note API Information](#task-9-deploy-web-service-and-note-api-information)
 
 ## Get out of Jail Free
 
@@ -45,10 +42,13 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/choose_ml_workspace.png)
 
-## Task 3: Upload the Sample Datasets
+## Task 3: Upload a Sample Dataset
 
-1. Before you begin creating a machine learning experiment, there are three datasets you need to load.
-2. From the Machine Learning Studio, click + NEW at the bottom, point to Dataset, and select From Local File.
+1. Before you begin creating a machine learning experiment, there are one dataset you need to load.
+2. From the Machine Learning Studio, click **+ NEW** at the bottom, point to Dataset, and select From Local File.
+
+    ![Screenshot](images/upload_the_sample_datasets_0.png)
+
 3. In the dialog that appears, click Choose File and browse to the "**C:\data\1.MachineLearning\1awt_flightsandweather.csv**" file and click OK.
 4. Click on the check mark on the bottom right corner of the screen.
 
@@ -65,7 +65,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/start_a_new_experiment_1.png)
 
-4. In the toolbar on the left, in the Search experiment items box, type the name of the dataset you created with flight delay data (awt_flightsandweather). You should see a component for it listed under **Saved Datasets** -> **My Datasets**.
+4. In the toolbar on the left, in the Search experiment items box, type the name of the dataset you created with flight delay data (1awt_flightsandweather). You should see a component for it listed under **Saved Datasets** -> **My Datasets**.
 
     ![Screenshot](images/start_a_new_experiment_2.png)
 
@@ -74,7 +74,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
     ![Screenshot](images/start_a_new_experiment_3.png)
 
 6. Next, you will explore each of the datasets to understand what kind of cleanup (aka data munging) will be necessary.
-7. Hover over the output port of the **FlightDelaysWithAirportCodes** dataset.
+7. Hover over the output port of the **1awt_flightsandweather.csv** dataset.
 
     ![Screenshot](images/start_a_new_experiment_4.png)
 
@@ -82,21 +82,22 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/start_a_new_experiment_5.png)
 
-9. A new dialog will appear showing a maximum of 100 rows by 100 columns sample of the dataset. You can see at the top that the dataset has a total of 2,719,418 rows (also referred to as examples in Machine Learning literature) and has 20 columns (also referred to as features).
+9. A new dialog will appear showing a maximum of 100 rows by 100 columns sample of the dataset. You can see at the top that the dataset has a total of 2,905,200 rows (also referred to as examples in Machine Learning literature) and has 11 columns (also referred to as features).
 
     ![Screenshot](images/start_a_new_experiment_6.png)
 
-10. Because all 20 columns are displayed, you can scroll the grid horizontally. Scroll until you see the **DepDel15** column and click it to view statistics about the column. The **DepDel15** column displays a 1 when the flight was delayed at least 15 minutes and 0 if there was no such delay. In the model you will construct, you will try to predict the value of this column for future data.
+10. Because all 11 columns are displayed, you can scroll the grid horizontally. Scroll until you see the **DepDel15** column and click it to view statistics about the column. The **DepDel15** column displays a 1 when the flight was delayed at least 15 minutes and 0 if there was no such delay. In the model you will construct, you will try to predict the value of this column for future data.
 
     ![Screenshot](images/start_a_new_experiment_7.png)
 
-11. Notice in the Statistics panel that a value of 27444 appears for Missing Values. This means that 27,444 rows do not have a value in this column. Since this value is very important to our model, we will eliminate any rows that do not have a value for this column. In fact, removing these missing values is just one of several "data wrangling" tasks that need to be done. Here is a list of tasks that we will need to do on this dataset before it is ready to be processed by a machine learning algorithm.
+11. Notice in the Statistics panel that a value of 34,119 appears for Missing Values. This means that 34,119 rows do not have a value in this column. Since this value is very important to our model, we will eliminate any rows that do not have a value for this column. In fact, removing these missing values is just one of several "data wrangling" tasks that need to be done. Here is a list of tasks that we will need to do on this dataset before it is ready to be processed by a machine learning algorithm.
     1. Remove rows with missing **DepDel15** values.
     1. Create a new column that represents the departure hour. This will be based on the **CRSDepTime** column.
     1. Trim down the list of columns needed to do the analysis at hand.
 
-3. Observe that this data set has 406,516 rows and 29 columns. For this model, we are going to focus on predicting delays using WindSpeed (in MPH), SeaLevelPressure (in inches of Hg), and HourlyPrecip (in inches). We will focus on preparing the data for those features.
-4. In the dialog, click the **WindSpeed** column and review the statistics. Observe that the Feature Type was inferred as String and that there are 32 Missing Values. Below that, examine the histogram to see that, even though the type was inferred as string, the values are all actually numbers (e.g. the x-axis values are 0, 6, 5, 7, 3, 8, 9, 10, 11, 13). We will need to ensure that we remove any missing values and convert WindSpeed to its proper type as a numeric feature.
+12. Observe that this data set has 406,516 rows and 29 columns. For this model, we are going to focus on predicting delays using WindSpeed (in MPH), SeaLevelPressure (in inches of Hg), and HourlyPrecip (in inches). We will focus on preparing the data for those features.
+
+13. In the dialog, click the **WindSpeed** column and review the statistics. Observe that the Feature Type was inferred as String and that there are 32 Missing Values. Below that, examine the histogram to see that, even though the type was inferred as string, the values are all actually numbers (e.g. the x-axis values are 0, 6, 5, 7, 3, 8, 9, 10, 11, 13). We will need to ensure that we remove any missing values and convert WindSpeed to its proper type as a numeric feature.
 
     ![Screenshot](images/prepare_the_weather_data_2.png)
 
@@ -110,7 +111,6 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
 7. As with the manipulation of the flight data, here you will use R script to perform the necessary data manipulation tasks on the weather data. The following steps will be taken:
     1. Substitue missing values in the **HourlyPrecip** and **WindSpeed** columns.
-    1. Create a new column called **Hour** based on the **Time** column.
     1. Replace the **WindSpeed** values that contain **M**.
     1. Replace the **SeaLevelPressure** values that contain **M**.
     1. Replace the **HourlyPrecip** values that contain **T**.
@@ -173,12 +173,14 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
     ```
 
 39. Run the experiment to update the metadata and process the data (this may take a minute or two to complete).
+
 40. Right click on the leftmost output port of your **Execute R Script** module and select **Visualize**.
+
 41. Compare the data in this view with the data before it was processed by the R script (recall the list of manipulations above). Verify that the dataset only contains the 8 columns referenced in the R script.
 
     ![Screenshot](images/ex01_data_viz_after_flightdelayswithairportcodes_r_module.png)
 
-## Task 7: Train the Model
+## Task 4: Train the Model
 
 AdventureWorks Travel wants to build a model to predict if a departing flight will have a 15 minute or greater delay. In the historical data they have provided, the indicator for such a delay is found within DepDelay15 (where a value of 1 means delay, 0 means no delay). To create model that predicts such a binary outcome, we can choose from the various Two-Class modules that Azure ML offers. For our purposes, we begin with a Two-Class Logistic Regression. This type of classification module needs to be first trained on sample data that includes the features important to making a prediction and must also include the actual historical outcome for those features.
 
@@ -208,7 +210,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/train_the_model_5.png)
 
-1. Run the experiment.
+1. **Run** the experiment.
 2. When the experiment is finished running (which may take a minute or two), right click on the output port of the **Score Model** module and select **Visualize** to see the results of its predictions. You should have a total of 13 columns.
 
     ![Screenshot](images/train_the_model_6.png)
@@ -222,12 +224,12 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/train_the_model_8.png)
 
-1. Run the experiment.
+1. **Run** the experiment.
 2. When the experiment is finished running, right-click the output of the Evaluate Model module and select **Visualize**. In this dialog box, you are presented with various ways to understand how your model is performing in the aggregate. While we will not cover how to interpret these results in detail, we can examine the ROC chart that tells us that at least our model (the blue curve) is performing better than random (the light gray straight line going from 0,0 to 1,1). A good start for our first model!
 
     ![Screenshot](images/train_the_model_9.png)
 
-## Task 8: Operationalize the Experiment
+## Task 5: Operationalize the Experiment
 
 1. Now that we have a functioning model, let's package it up into a predictive experiment that can be called as web service.
 2. In the command bar at the bottom, click **Set Up Web Service** and then select **Predictive Web Service**. If you see that the **Set Up Web Service** option is grayed out, then you may need to run the experiment again by click on the **RUN** button.
@@ -242,7 +244,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
 1. Remove connect lin between the **Execute R Script** and **Score Model** modules.
 
-1. Add new **Select Columns in Dataset** on convas.
+1. To exculde **DepDel15** column from dataset,add new **Select Columns in Dataset** module on convas.
 
 1. In the **Properties** panel for the **Select Columns in Dataset** module click the **Launch column selector** button. In this dialog, click **ALL COLUMNS** and select **Exclude** (notice this is an exclude operation) from the dropdown box. Then select **DepDel15** in the textbox. This configuration will update the web service metadata so that this column does not appear as a required input parameter for the web service.
 
@@ -276,17 +278,17 @@ The typical pattern is split the historical data so a portion is shown to the mo
     maml.mapOutputPort("ds.awtdata");
     ```
 
-3. Create connection between **Execute R Script** and **Score Model** modules.
+3. Complete the workflow by creating connection between the bottom **Execute R Script** and **Score Model** modules.
 
     ![Screenshot](images/operationalize_the_experiment_10.png)
 
-1. Drag and drop from port of **Web Service input** to bottom of **Execute R Script** module like following.
+1. Drag and drop from port of **Web Service input** to the bottom  **Execute R Script** module like following.
 
     ![Screenshot](images/operationalize_the_experiment_18.png)
 
 1. **Run** the experiment. This may take a few minutes. Your experiment is now ready to be deployed as a web service!
 
-## Task 9: Deploy Web Service and Note API Information
+## Task 6: Deploy Web Service and Note API Information
 
 1. When the experiment is finished running, click **Deploy Web Service [New]** (*not* **[Classic]**). This will launch the web service deployment wizard.
 
@@ -299,13 +301,18 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/operationalize_the_experiment_20.png)
 1. From the **Quick Start** page, click the **Use Web Service** link.
+
 2. Click the Copy button for the **Primary key**, open a copy of Notepad, and paste the value in the editor.
+
 2. Click the Copy button for the **Request-Response** link. The URL will look something like the following:
     * https://ussouthcentral.services.azureml.net/subscriptions/[SOME_GUID]/services/[SOME_OTHER_GUID]/execute?api-version=2.0&format=swagger
+
 1. The first GUID after subscriptions is your Workspace ID. The second GUID after services is your Service ID.
+
 2. Copy each of these values into Notepad as well. Make sure you note which GUID is which because you will need these in a later step.
+
 1. Finally, copy the **Batch Requests** URL to Notepad as well, but make sure to remove the '?' character and everything after it. You should be left with a URL that looks something like the following. Again, make sure to label this as your batch service in your Notepad instance.
-    * https://ussouthcentral.services.azureml.net/subscriptions/[SOME_GUID]/services/[SOME_OTHER_GUID]/jobs
+    * https://ussouthcentral.services.azureml.net/subscriptions/[**SOME_GUID**]/services/[**SOME_OTHER_GUID**]/jobs
 
     ![Screenshot](images/operationalize_the_experiment_21.png)
 
