@@ -309,4 +309,4 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/operationalize_the_experiment_21.png)
 
-Next Exercise: [Exercise 2 - Setup Azure Data Factory](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/02%20Exercise%202%20-%20Setup%20Azure%20Data%20Factory.md)
+Next Exercise: [Exercise 2 - Operationalize ML Scoring with Azure ML and Data Factory](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual2Hrlong/blob/master/02%20Exercise%202%20-%20Operationalize%20ML%20Scoring%20with%20Azure%20ML%20and%20Data%20Factory.md)

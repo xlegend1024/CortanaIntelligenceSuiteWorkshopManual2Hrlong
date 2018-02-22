@@ -1,4 +1,4 @@
-# Exercise 8: Cleanup of Azure Resources
+# Exercise 4: Cleanup of Azure Resources
 
 Duration: 10 mins
 

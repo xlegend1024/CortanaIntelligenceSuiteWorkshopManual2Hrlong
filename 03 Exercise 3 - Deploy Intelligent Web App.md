@@ -23,7 +23,7 @@ Synopsis: In this exercise, attendees will deploy an intelligent web application
     ![Screenshot](images/deploy_web_app_from_github_2.png)
 1. **Congratulations!** You have built and deployed an intelligent system to Azure!
 
-Next Exercise: [Exercise 8 - Cleanup of Azure Resources](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/08%20Exercise%208%20-%20Cleanup%20of%20Azure%20Resources.md)
+Next Exercise: [Exercise 4 - Cleanup of Azure Resources](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual2Hrlong/blob/master/04%20Exercise%204%20-%20Cleanup%20of%20Azure%20Resources.md)
 
 
 --3a7a579f41f30b09

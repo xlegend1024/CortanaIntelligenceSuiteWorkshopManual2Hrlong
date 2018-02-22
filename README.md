@@ -33,8 +33,8 @@ The workshop uses several, but not nearly all, of the components that are part o
 # Exercises
 - [Prereq   0 - Deploy Workshop Environment to Azure](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/00%20Deploy%20Workshop%20Environment%20to%20Azure.md)
 - [Exercise 1 - Building a Machine Learning Model](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual2Hrlong/blob/master/01%20Exercise%201%20-%20Building%20a%20Machine%20Learning%20Model.md)
-- [Exercise 2 - Operationalize ML Scoring with Azure ML and Data Factory](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/04%20Exercise%204%20-%20Operationalize%20ML%20Scoring%20with%20Azure%20ML%20and%20Data%20Factory.md)
-- [Exercise 3 - Deploy Intelligent Web App](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/07%20Exercise%207.2%20-%20Deploy%20Intelligent%20Web%20App.md)
-- [Exercise 4 - Cleanup of Azure Resources](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/08%20Exercise%208%20-%20Cleanup%20of%20Azure%20Resources.md)
+- [Exercise 2 - Operationalize ML Scoring with Azure ML and Data Factory](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual2Hrlong/blob/master/02%20Exercise%202%20-%20Operationalize%20ML%20Scoring%20with%20Azure%20ML%20and%20Data%20Factory.md)
+- [Exercise 3 - Deploy Intelligent Web App](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual2Hrlong/blob/master/03%20Exercise%203%20-%20Deploy%20Intelligent%20Web%20App.md)
+- [Exercise 4 - Cleanup of Azure Resources](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual2Hrlong/blob/master/04%20Exercise%204%20-%20Cleanup%20of%20Azure%20Resources.md)
 - [Appendix A - Alternative to Azure ML Exercise](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/09%20Appendix%20A%20-%20Alternative%20to%20Azure%20ML%20Exercise.md)
 - [Appendix B - Alternative to Azure Data Factory Exercises](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual/blob/master/10%20Appendix%20B%20-%20Alternative%20to%20Data%20Factory%20Exercises.md)
