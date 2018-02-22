@@ -7,10 +7,8 @@ Synopsis: In this exercise, attendees will extend the Data Factory service to op
 This exercise has 5 tasks:
 
 * [Task 1: Create Azure ML Linked Service](#task-1-create-azure-ml-linked-service)
-* [Task 2: Create Azure ML Input Dataset](#task-2-create-azure-ml-input-dataset)
-* [Task 3: Create Azure ML Scored Dataset](#task-3-create-azure-ml-scored-dataset)
-* [Task 4: Create Azure ML Predictive Pipeline](#task-4-create-azure-ml-predictive-pipeline)
-* [Task 5: Monitor Your Pipeline Activities](#task-5-monitor-your-pipeline-activities)
+* [Task 2: Create Azure ML Predictive Pipeline](#task-4-create-azure-ml-predictive-pipeline)
+* [Task 3: Monitor Your Pipeline Activities](#task-5-monitor-your-pipeline-activities)
 
 ## Get out of Jail Free
 
@@ -30,7 +28,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
     ![Screenshot](images/create_azure_ml_linked_service_2.png)
 1. Select **Azure ML** from the list.
 2. In the new window, be sure change the JSON file to match the following:
-    * Back in [Exercise 1, Task 9](01 Exercise 1 - Building a Machine Learning Model.md#task-9-deploy-web-service-and-note-api-information) you noted some values related to your ML web service. The value for **mlEndPoint**  below is your web service's **Batch Requests** URL (remembering to remove the query string), and **apiKey** is the **Primary Key** of your web service.
+    * Back in [Exercise 1, Task 9](https://github.com/xlegend1024/CortanaIntelligenceSuiteWorkshopManual2Hrlong/blob/master/01%20Exercise%201%20-%20Building%20a%20Machine%20Learning%20Model.md#task-7-deploy-web-service-and-note-api-information) you noted some values related to your ML web service. The value for **mlEndPoint**  below is your web service's **Batch Requests** URL (remembering to remove the query string), and **apiKey** is the **Primary Key** of your web service.
 
     ```json
     {
@@ -47,74 +45,8 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
     ```
 1. Click **Deploy**.
 
-## Task 2: Create Azure ML Input Dataset
 
-1. Click on **…More**.
-
-    ![Screenshot](images/create_azure_ml_input_dataset_0.png)
-1. To create new dataset that will be copied into Azure Blob storage, click on the **New dataset** from the top.
-
-   ![Screenshot](images/create_azure_ml_input_dataset_1.png)
-1. Select **Azure Blob storage** from the list.
-2. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window.
-
-    ```json
-    {
-        "name": "AzureBlobDataInPut",
-        "properties": {
-            "type": "AzureBlob",
-            "external": true,
-            "linkedServiceName": "OutputLinkedService-AzureBlobStorage",
-            "typeProperties": {
-                "fileName": "FlightsAndWeather.csv",
-                "folderPath": "sparkcontainer",
-                "format": {
-                    "type": "TextFormat"
-                }
-            },
-            "availability": {
-                "frequency": "Hour",
-                "interval": 12
-            }
-        }
-    }
-    ```
-1. Click Deploy.
-
-## Task 3: Create Azure ML Scored Dataset
-
-1. Click on **…More**.
-
-    ![Screenshot](images/create_azure_ml_scored_dataset_0.png)
-1. Click on the **New dataset**.
-
-    ![Screenshot](images/create_azure_ml_scored_dataset_1.png)
-1. Select **Azure Blob storage** from the list.
-2. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window.
-
-    ```json
-    {
-        "name": "AzureBlobScoredDataOutPut",
-        "properties": {
-            "type": "AzureBlob",
-            "linkedServiceName": "OutputLinkedService-AzureBlobStorage",
-            "typeProperties": {
-                "fileName": "Scored_FlightsAndWeather.csv",
-                "folderPath": "sparkcontainer",
-                "format": {
-                    "type": "TextFormat"
-                }
-            },
-            "availability": {
-                "frequency": "Hour",
-                "interval": 12
-            }
-        }
-    }
-    ```
-1. Click **Deploy**.
-
-## Task 4: Create Azure ML Predictive Pipeline
+## Task 2: Create Azure ML Predictive Pipeline
 
 1. Click on **…More**.
 
@@ -125,7 +57,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 1. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window.
 
     ```json
-    {
+   {
         "name": "PredictivePipeline",
         "properties": {
             "description": "Use AzureML model",
@@ -133,20 +65,20 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
                 {
                     "type": "AzureMLBatchExecution",
                     "typeProperties": {
-                        "webServiceInput": "AzureBlobDataInPut",
+                        "webServiceInput": "FlightsAndWeatherDataSet",
                         "webServiceOutputs": {
-                            "output1": "AzureBlobScoredDataOutPut"
+                            "output1": "MLOperationResult"
                         },
                         "globalParameters": {}
                     },
                     "inputs": [
                         {
-                            "name": "AzureBlobDataInPut"
+                            "name": "FlightsAndWeatherDataSet"
                         }
                     ],
                     "outputs": [
                         {
-                            "name": "AzureBlobScoredDataOutPut"
+                            "name": "MLOperationResult"
                         }
                     ],
                     "policy": {
@@ -155,13 +87,17 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
                         "executionPriorityOrder": "NewestFirst",
                         "retry": 1
                     },
+                    "scheduler": {
+                        "frequency": "Minute",
+                        "interval": 60
+                    },
                     "name": "MLActivity",
                     "description": "prediction analysis on batch input",
                     "linkedServiceName": "AzureMLLinkedService"
                 }
             ],
-            "start": "2016-09-14T00:00:00Z",
-            "end": "2016-09-15T00:00:00Z"
+            "start": "YYYY-MM-DDT00:00:00Z",
+            "end": "YYYY-MM-D1T00:00:00Z"
         }
     }
     ```

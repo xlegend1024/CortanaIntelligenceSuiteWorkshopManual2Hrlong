@@ -9,9 +9,10 @@ This exercise has 9 tasks:
 * [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm)
 * [Task 2: Navigate to Machine Learning Studio](#task-2-navigate-to-machine-learning-studio)
 * [Task 3: Upload the Sample Datasets](#task-3-upload-the-sample-datasets)
-* [Task 4: Train the Model](#task-7-train-the-model)
-* [Task 5: Operationalize the Experiment](#task-8-operationalize-the-experiment)
-* [Task 6: Deploy Web Service and Note API Information](#task-9-deploy-web-service-and-note-api-information)
+* [Task 4: Start a New Experiment](#task-4-start-a-new-experiment)
+* [Task 5: Train the Model](#task-5-Train-the-Model)
+* [Task 6: Operationalize the Experiment](##task-5-train-the-model)
+* [Task 7: Deploy Web Service and Note API Information](#task-9-deploy-web-service-and-note-api-information)
 
 ## Get out of Jail Free
 
@@ -180,7 +181,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/ex01_data_viz_after_flightdelayswithairportcodes_r_module.png)
 
-## Task 4: Train the Model
+## Task 5: Train the Model
 
 AdventureWorks Travel wants to build a model to predict if a departing flight will have a 15 minute or greater delay. In the historical data they have provided, the indicator for such a delay is found within DepDelay15 (where a value of 1 means delay, 0 means no delay). To create model that predicts such a binary outcome, we can choose from the various Two-Class modules that Azure ML offers. For our purposes, we begin with a Two-Class Logistic Regression. This type of classification module needs to be first trained on sample data that includes the features important to making a prediction and must also include the actual historical outcome for those features.
 
@@ -229,7 +230,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/train_the_model_9.png)
 
-## Task 5: Operationalize the Experiment
+## Task 6: Operationalize the Experiment
 
 1. Now that we have a functioning model, let's package it up into a predictive experiment that can be called as web service.
 2. In the command bar at the bottom, click **Set Up Web Service** and then select **Predictive Web Service**. If you see that the **Set Up Web Service** option is grayed out, then you may need to run the experiment again by click on the **RUN** button.
@@ -288,7 +289,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
 1. **Run** the experiment. This may take a few minutes. Your experiment is now ready to be deployed as a web service!
 
-## Task 6: Deploy Web Service and Note API Information
+## Task 7: Deploy Web Service and Note API Information
 
 1. When the experiment is finished running, click **Deploy Web Service [New]** (*not* **[Classic]**). This will launch the web service deployment wizard.
 
